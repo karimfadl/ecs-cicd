@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "ecs-app-container",
-      "image": "611135556662.dkr.ecr.us-east-2.amazonaws.com/ecs-repo:BUILD_NUMBER",
+      "image": "611135556662.dkr.ecr.us-east-2.amazonaws.com/ecs-repo:${IMAGE_VERSION=}",
       "memory": 256,
       "cpu": 10,
       "essential": true,
