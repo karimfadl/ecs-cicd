@@ -10,6 +10,8 @@ TASK_FAMILY="ecs-app"
 
 sed -e "s;%BUILD_NUMBER%;${BUILD_NUMBER};g" ecs-app.json > ecs-app-v_${BUILD_NUMBER}.json
 
+sed "s/BUILD_NUMBER/$IMAGE_VERSION/g" ecs-app-v_${BUILD_NUMBER}.json
+
 aws ecs register-task-definition --family ecs-app --cli-input-json file://ecs-app-v_${BUILD_NUMBER}.json
 
 # Update the service with the new task definition and desired count
